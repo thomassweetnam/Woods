@@ -3,6 +3,7 @@ import math
 import re
 from pathlib import Path
 from urllib.parse import urlparse, urljoin
+BASE_DIR = Path(__file__).resolve().parent
 
 import pandas as pd
 import streamlit as st
@@ -13,9 +14,9 @@ import requests
 from bs4 import BeautifulSoup
 
 # ----- CONFIG -----
-SITES_CSV = Path(r"C:\Users\thoma\OneDrive\Documents\Repositories\Glamping\woodlands_sites.csv")
-CITY_CSV  = Path(r"C:\Users\thoma\OneDrive\Documents\Repositories\Glamping\gb.csv")  # optional
-PDFS_DIR  = Path(r"C:\Users\thoma\OneDrive\Documents\Repositories\Glamping\PDFs")
+SITES_CSV = BASE_DIR / "woodlands_sites.csv"
+CITY_CSV  = BASE_DIR / "gb.csv"
+PDFS_DIR  = BASE_DIR / "PDFs"
 UK_CENTER = (54.5, -3.0)
 UK_ZOOM   = 5
 DEFAULT_DISTANCE_MILES_THRESHOLD = 50.0
